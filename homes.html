@@ -15,6 +15,100 @@
 
 <body>
 
+    <style>
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .mahesh {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .mahesh-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            padding-top: 25px;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
 
 
 
@@ -45,7 +139,8 @@
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Sign</a>
+                    <a class="nav-link" onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">Sign</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Login</a>
@@ -66,6 +161,52 @@
 
         </div>
     </nav>
+
+    <div id="id01" class=" mahesh container-fluid">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10 col-sm-10 col-md-10 col-lg-4 border border-dark alert-info ">
+                <hr>
+                <h3 style="text-align: center; "><strong>SIGN UP PAGE</strong></h3>
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <hr>
+
+                <div class="form-group">
+                    <form action="" method="POST">
+                        <label for="">FULL NAME</label>
+                        <input type="text" class="form-control">
+                        <label for="">MOBILE NUMBER</label>
+                        <input type="text" class="form-control">
+                        <label for="">GMAIL</label>
+                        <input type="email" class="form-control">
+                        <label for="">PASSWORD</label>
+                        <input type="password" class="form-control">
+                        <label for="">CONFORM PASSWORD</label>
+                        <input type="password" class="form-control">
+                    </form>
+                </div>
+                <button type="button" style="margin-bottom: 5px;"
+                    class="btn btn-success btn-lg btn-block">SUBMIT</button>
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+    </div>
+
+    <script>
+        // Get the modal
+        var mahesh = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == mahesh) {
+                mahesh.style.display = "none";
+            }
+        }
+    </script>
+
 
     <div id="demo" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
